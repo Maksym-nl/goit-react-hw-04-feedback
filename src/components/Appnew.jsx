@@ -5,7 +5,7 @@ import { Section } from './Section/Section';
 import { Notification } from './Notification/Notification';
 import { useState } from 'react';
 
-export const App = () => {
+export const Appnew = () => {
   const [good, setGood] = useState([0]);
   const [neutral, setNeutral] = useState([0]);
   const [bad, setBad] = useState([0]);
@@ -30,9 +30,10 @@ export const App = () => {
     // const { good, neutral, bad } = this.state;
     return good + neutral + bad;
   };
+
   const countPositiveFeedbackPercentage = () => {
     const total = countTotalFeedback();
-    return Math.ceil((this.state.good / total) * 100) || 0;
+    return Math.ceil((good / total) * 100) || 0;
   };
 
   //   const { good, neutral, bad } = state;
@@ -42,7 +43,11 @@ export const App = () => {
   return (
     <>
       <Section title="Feedback">
-        <Feedback handleClick={handleClick} options={Object.keys(this.state)} />
+        <Feedback
+          options={['good', 'bad', 'neutral']}
+          handleClick={handleClick}
+        />
+        {/* <Feedback handleClick={handleClick} options={Object.keys(Usestate)} /> */}
       </Section>
       <Section title="Statistics">
         {total === 0 ? (
