@@ -6,11 +6,11 @@ import { Notification } from './Notification/Notification';
 import { useState } from 'react';
 
 export const Appnew = () => {
-  const [good, setGood] = useState([0]);
-  const [neutral, setNeutral] = useState([0]);
-  const [bad, setBad] = useState([0]);
+  const [good, setGood] = useState(0);
+  const [neutral, setNeutral] = useState(0);
+  const [bad, setBad] = useState(0);
 
-  const handleClick = () => option => {
+  const handleClick = option => {
     switch (option) {
       case 'good':
         setGood(prevState => prevState + 1);
